@@ -1,6 +1,6 @@
 body {
     background-color: #4e3e96;
-    color: rgb(7, 18, 56);
+    color: rgb(0, 0, 0);
 }
 
 
@@ -120,6 +120,626 @@ section h5,
 section h6 {
   font-size: 24px;
   max-width: 1300px;
+}
+
+
+Vous avez dit :
+comment je fais pour rajouter une immage dans mon site sur github
+ChatGPT a dit :
+Voici les méthodes les plus simples pour ajouter une image à un site hébergé sur GitHub Pages 👇
+
+🔹 1. Mettre l’image dans ton dépôt GitHub
+Ouvre ton dépôt sur GitHub
+
+Clique sur Add file → Upload files
+
+Téléverse ton image (ex: photo.jpg)
+
+Clique sur Commit changes
+
+👉 Bonne pratique : créer un dossier images/
+
+/images
+   photo.jpg
+index.html
+🔹 2. Afficher l’image dans ton fichier HTML
+Dans ton fichier index.html, ajoute :
+
+<img src="images/photo.jpg" alt="Description de l'image">
+Si l’image est à la racine du projet :
+
+<img src="photo.jpg" alt="Description de l'image">
+🔹 3. Si ton site utilise du CSS (image en arrière-plan)
+body {
+  background-image: url("images/photo.jpg");
+}
+🔹 4. Vérifier que l’image s’affiche bien
+Les noms de fichiers sont sensibles à la casse
+(Image.jpg ≠ image.jpg)
+
+Attends 1–2 minutes après le commit (GitHub Pages met un peu de temps)
+
+Recharge la page avec Ctrl + F5
+
+🔹 5. URL complète (optionnel)
+Tu peux aussi utiliser l’URL directe de l’image :
+
+https://tonpseudo.github.io/ton-repo/images/photo.jpg
+❓ Tu utilises quoi exactement ?
+Dis-moi :
+
+HTML simple ?
+
+Markdown (README.md) ?
+
+Framework (React, Vue…) ?
+
+Je t’expliquerai la méthode exacte pour ton cas 👍
+
+Vous avez dit :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pédicure-podologue</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Pédicure-podologue</h1>
+    <nav>
+        <button id="b1">accueil</button>
+        <button id="b2">détails</button>
+        <button id="b3">rendez-vous</button>
+    </nav>
+   </header>
+   <section>
+    <h1>
+        🔍 CABINET DE PODOLOGIE PEDICURIE Lydie CHOSSON
+    </h1>
+    <h2>
+       📍 98 Rue Emile Zola, 69210 L'Arbresle Lyon
+    </h2>
+    <img src="lydie.png" alt="">
+    <h4>
+        Pour toute information supplémentaire, vous pouvez contacter le cabinet au 
+    </h4>
+   </section>
+<script src="script.js"></script>
+</body>
+</html> comment faire pour que la photo "lydie.png" apparaise en haut a droite et non a gauche 
+ChatGPT a dit :
+Parfait, ton HTML est correct 👍
+Il faut juste utiliser le CSS pour placer l’image en haut à droite.
+
+✅ Solution simple (la plus courante)
+Dans ton fichier style.css, ajoute ceci :
+
+section {
+    position: relative;
+}
+
+section img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px; /* ajuste la taille si besoin */
+}
+👉 Résultat :
+
+l’image lydie.png sera en haut à droite de la section
+
+le texte reste à gauche
+
+✅ Alternative avec Flexbox (propre et moderne)
+Si tu veux un layout plus propre, modifie un peu le HTML :
+
+HTML
+<section class="presentation">
+  <div class="texte">
+    <h1>🔍 CABINET DE PODOLOGIE PEDICURIE Lydie CHOSSON</h1>
+    <h2>📍 98 Rue Emile Zola, 69210 L'Arbresle Lyon</h2>
+    <h4>Pour toute information supplémentaire, vous pouvez contacter le cabinet au</h4>
+  </div>
+
+  <img src="lydie.png" alt="Photo du cabinet">
+</section>
+CSS
+.presentation {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.presentation img {
+    width: 200px;
+}
+👉 Avantage :
+
+responsive
+
+plus facile à gérer sur mobile
+
+⚠️ Points à vérifier
+lydie.png doit être au même endroit que ton fichier HTML
+ou adapte le chemin :
+
+<img src="images/lydie.png">
+Attention aux majuscules (Lydie.png ≠ lydie.png)
+
+Si tu veux :
+
+📱 une version mobile
+
+🖼️ une image ronde
+
+📐 un alignement parfait avec le header
+
+dis-le-moi et je t’aide à le peaufiner 😉
+
+Vous avez dit :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos tarif</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Présentation:</h1>
+    <nav>
+        <button id="b1">accueil</button>
+        <button id="b2">détails</button>
+        <button id="b3">prendre rendez-vous</button>
+    </nav>
+   </header>
+   <main>
+    <img src="lydie.png" alt="">
+    <h1>
+        Lydie Chosson est pédicure-podologue depuis 25 ans.
+    </h1>
+    <h2>
+       Le cabinet est équipé de matériels techniques performants permettant la réalisation de bilans podologiques complets. 
+    </h2>
+    <h3>
+        Elle réalise ainsi des semelles orthopédiques sur mesure pour les indications fonctionnelles et traumatiques, tant pour les pathologies de ville que les pathologies sportives touchant notamment les pieds, chevilles, genoux, bassin et rachis.
+    </h3>
+    <h4>
+        Elle s'occupe de la rééducation des pieds et de l'équilibre du patient suite à une opération.
+    </h4>
+    <h5>
+        Victoria SOUY s occupe des soins de pédicurie et traites toutes les affections du pied: ongles incarnés, verrues plantaires, cors , durillons, soins diabétiques, etc...
+    </h5>
+    <h6>
+        Pour toute urgence, vérification de semelles ou pour tout rendez-vous en dehors des créneaux horaires proposés, vous pouvez contacter le cabinet au numéro indiqué.
+    </h6>
+   </main>
+<script src="script.js"></script>
+</body>
+</html> et la je fais comment pour la mettre en haut a gauche en ptit
+ChatGPT a dit :
+Très bien 👍
+Ici aussi, tout se fait en CSS. Tu veux l’image petite et en haut à gauche.
+
+✅ Solution simple (recommandée)
+Ajoute ceci dans ton style.css :
+
+main {
+    position: relative;
+}
+
+main img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px; /* taille petite */
+    margin: 10px;
+}
+👉 Résultat :
+
+image en haut à gauche
+
+image petite
+
+le texte reste en dessous / à droite
+
+⚠️ Important : éviter que le texte passe dessous
+Ajoute un petit padding au main :
+
+main {
+    padding-left: 150px;
+    padding-top: 20px;
+}
+✅ Variante propre avec Flexbox (si tu veux un rendu plus pro)
+HTML (légère adaptation)
+<main class="presentation">
+  <img src="lydie.png" alt="Lydie Chosson">
+  <div class="contenu">
+    <h1>Lydie Chosson est pédicure-podologue depuis 25 ans.</h1>
+    <h2>Le cabinet est équipé de matériels techniques performants permettant la réalisation de bilans podologiques complets.</h2>
+    <h3>Elle réalise ainsi des semelles orthopédiques sur mesure...</h3>
+    <h4>Elle s'occupe de la rééducation des pieds...</h4>
+    <h5>Victoria SOUY s'occupe des soins de pédicurie...</h5>
+    <h6>Pour toute urgence...</h6>
+  </div>
+</main>
+CSS
+.presentation {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.presentation img {
+    width: 120px;
+}
+✨ Bonus (optionnel)
+Image ronde
+main img {
+    border-radius: 50%;
+}
+Petite ombre
+main img {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+Si tu veux, je peux aussi :
+
+📱 adapter pour mobile
+
+🎨 harmoniser avec le header
+
+🔘 transformer les boutons en vrai menu
+
+Dis-moi 😉
+
+Vous avez dit :
+pas ici , a gauche du texte au debut
+ChatGPT a dit :
+Ah parfait, merci pour la précision 👍
+Tu veux l’image au début du texte, à gauche, et le texte qui s’enroule à droite (comme dans un article).
+
+👉 La bonne solution ici, c’est float.
+
+✅ Solution EXACTE pour ton besoin
+Dans ton style.css :
+main img {
+    width: 120px;      /* image petite */
+    float: left;       /* image à gauche du texte */
+    margin: 0 15px 10px 0; /* espace entre image et texte */
+}
+🔍 Ce que ça fait
+l’image apparaît au début du contenu
+
+à gauche
+
+le texte s’affiche à droite et en dessous
+
+rendu naturel, parfait pour une présentation
+
+⚠️ Important (éviter les bugs après)
+À la fin du texte, ajoute ceci dans le CSS :
+
+main::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+🎯 Résultat visuel attendu
+[ IMAGE ]  Lydie Chosson est pédicure-podologue depuis 25 ans.
+           Le cabinet est équipé de matériels techniques...
+           Elle réalise ainsi des semelles orthopédiques...
+✨ Optionnel (si tu veux un rendu plus propre)
+Image ronde
+main img {
+    border-radius: 50%;
+}
+Bordure légère
+main img {
+    border: 2px solid #ccc;
+}
+Si tu veux, je peux aussi :
+
+adapter l’affichage mobile
+
+aligner parfaitement avec le header
+
+améliorer la typographie
+
+Tu avances très bien 💪
+
+Vous avez dit :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos tarif</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Présentation:</h1>
+    <nav>
+        <button id="b1">accueil</button>
+        <button id="b2">détails</button>
+        <button id="b3">prendre rendez-vous</button>
+    </nav>
+   </header>
+   <main>
+    <img src="Cww.png" alt="">
+    <h1>
+        Lydie Chosson est pédicure-podologue depuis 25 ans.
+    </h1>
+    <h2>
+       Le cabinet est équipé de matériels techniques performants permettant la réalisation de bilans podologiques complets. 
+    </h2>
+    <h3>
+        Elle réalise ainsi des semelles orthopédiques sur mesure pour les indications fonctionnelles et traumatiques, tant pour les pathologies de ville que les pathologies sportives touchant notamment les pieds, chevilles, genoux, bassin et rachis.
+    </h3>
+    <h4>
+        Elle s'occupe de la rééducation des pieds et de l'équilibre du patient suite à une opération.
+    </h4>
+    <h5>
+        Victoria SOUY s occupe des soins de pédicurie et traites toutes les affections du pied: ongles incarnés, verrues plantaires, cors , durillons, soins diabétiques, etc...
+    </h5>
+    <h6>
+        Pour toute urgence, vérification de semelles ou pour tout rendez-vous en dehors des créneaux horaires proposés, vous pouvez contacter le cabinet au numéro indiqué.
+    </h6>
+   </main>
+<script src="script.js"></script>
+</body>
+</html> comment je fais pour que la photo apparaissse au meme niveau que la premiere phrase en petit a gauche
+ChatGPT a dit :
+Parfait, là c’est très clair 👍
+Tu veux l’image petite, à gauche, exactement au même niveau que la première phrase, avec le texte qui commence à côté.
+
+👉 La solution la plus simple et propre : float + enlever les marges du titre.
+
+✅ CSS À AJOUTER dans style.css
+main img {
+    width: 90px;          /* image petite */
+    float: left;          /* à gauche du texte */
+    margin: 0 15px 10px 0; /* espace avec le texte */
+}
+
+main h1 {
+    margin-top: 0;        /* aligne le texte avec l’image */
+}
+⚠️ Important (nettoyer le float)
+Ajoute aussi ceci à la fin :
+
+main::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+🎯 Résultat visuel attendu
+[ IMG ] Lydie Chosson est pédicure-podologue depuis 25 ans.
+        Le cabinet est équipé de matériels techniques...
+✨ Optionnel (si tu veux un rendu plus joli)
+Image ronde
+main img {
+    border-radius: 50%;
+}
+Ombre légère
+main img {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+🔍 À vérifier
+Cww.png est bien au bon endroit (même dossier que le HTML)
+
+Attention aux majuscules (Cww.png ≠ cww.png)
+
+Si tu veux, je peux aussi te proposer une version responsive mobile ou améliorer l’alignement global 😉
+
+Vous avez dit :
+body {
+    background-color: #4e3e96;
+    color: rgb(0, 0, 0);
+}
+
+
+header {
+  position: sticky;
+  top: 10px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 24px;     
+  background: #7266db;    
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6 {
+  font-size: 18px;
+  max-width: 1300px;
+}
+
+main {
+  max-width: 800px;
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+
+  font-size: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+main p {
+  margin-bottom: 1em;
+}
+
+main h1 {
+  font-size: 1.8rem;
+}
+
+main h2 {
+  font-size: 1.5rem;
+}
+
+main h3 {
+  font-size: 1.25rem;
+}
+
+main h1,
+main h2,
+main h3 {
+  margin-top: 1.8em;
+  margin-bottom: 0.6em;
+  line-height: 1.3;
+}
+
+
+button, .btn {
+    background: linear-gradient(135deg, #6851cf, #33114e); /* dégradé sympa */
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px; /* coins arrondis */
+    cursor: pointer;
+    transition: all 0.3s ease; /* effet smooth sur hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* ombre subtile */
+}
+
+
+
+button:hover, .btn:hover {
+    transform: translateY(-3px) scale(1.05); /* petit effet de “pop” */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #2a1344, #1f2925); /* léger changement de couleur */
+}
+
+
+
+
+button:active, .btn:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(107, 115, 255, 0.5);
+}
+
+
+
+section  h4 {
+  font-size: 17px;
+}
+
+
+section h1,
+section h2,
+section h3,
+section h4,
+section h5,
+section h6 {
+  font-size: 24px;
+  max-width: 1300px;
+}
+  jai deja sa dans mon css modifie le pour que limage soit comme je le souhaite
+ChatGPT a dit :
+Parfait, merci d’avoir collé ton CSS 👍
+Je vais le modifier sans tout casser, juste en ajoutant ce qu’il faut pour que :
+
+✅ l’image soit petite
+✅ à gauche du texte
+✅ alignée exactement avec la première phrase
+
+✅ CE QUE TU DOIS AJOUTER À LA FIN DE TON CSS
+(ne supprime rien, ajoute simplement ces règles)
+
+main img {
+  width: 90px;                 /* image petite */
+  float: left;                 /* image à gauche du texte */
+  margin: 0 15px 10px 0;       /* espace entre image et texte */
+}
+
+main h1 {
+  margin-top: 0;               /* aligne le texte avec l'image */
+}
+
+/* évite les problèmes de float après le texte */
+main::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+🎯 POURQUOI ÇA MARCHE AVEC TON CSS ACTUEL
+Tu as déjà un main centré → parfait
+
+Les titres ont des marges automatiques → on corrige juste le h1
+
+float: left permet au texte de s’enrouler naturellement
+
+clear: both évite les bugs d’affichage plus bas
+
+👀 RENDU FINAL (schéma)
+[ IMG ] Lydie Chosson est pédicure-podologue depuis 25 ans.
+        Le cabinet est équipé de matériels techniques performants...
+        Elle réalise ainsi des semelles orthopédiques sur mesure...
+✨ OPTIONNEL (si tu veux un rendu encore plus pro)
+Image ronde + douce
+main img {
+  border-radius: 50%;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+}
+Si tu veux, je peux aussi :
+
+adapter pour mobile 📱
+
+aligner l’image avec le header
+
+harmoniser les couleurs avec ton thème violet
+
+Tu fais du très bon boulot 👌
+
+Vous avez dit :
+et comment je fais pour quelle soit plus petite et en haut a droite de la page
+ChatGPT a dit :
+Parfait 👍
+Cette fois tu veux l’image plus petite et en haut à droite de la page (pas du texte).
+
+👉 On va le faire proprement, sans casser ton CSS existant.
+
+✅ SOLUTION SIMPLE ET FIABLE
+🔹 Ajoute à la fin de ton style.css :
+main {
+  position: relative; /* référence pour l'image */
+}
+
+main img {
+  width: 60px;              /* image plus petite */
+  position: absolute;       /* placement libre */
+  top: 10px;
+  right: 10px;
+}
+
+main img {
+  border-radius: 50%;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
 }
 
 
