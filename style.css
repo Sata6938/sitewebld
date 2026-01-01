@@ -1,5 +1,5 @@
 body {
-    background-color: #e8cefd;
+    background-color: #4e3e96;
     color: rgb(7, 18, 56);
 }
 
@@ -10,7 +10,7 @@ header {
   max-width: 1100px;
   margin: 0 auto;
   padding: 14px 24px;     
-  background: #d697df;    
+  background: #7266db;    
   border-radius: 18px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
   z-index: 1000;
@@ -69,7 +69,7 @@ main h3 {
 
 
 button, .btn {
-    background: linear-gradient(135deg, #f39ec9, #33114e); /* dégradé sympa */
+    background: linear-gradient(135deg, #6851cf, #33114e); /* dégradé sympa */
     color: white;
     font-size: 16px;
     font-weight: 500;
@@ -121,3 +121,5 @@ section h6 {
   font-size: 24px;
   max-width: 1300px;
 }
+
+
